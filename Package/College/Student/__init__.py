@@ -1,1 +1,2 @@
-import studentDetails;
+from studentDetails import getStudentName;
+from studentDetails import getStudentDept;
