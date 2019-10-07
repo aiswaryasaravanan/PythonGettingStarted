@@ -2,7 +2,7 @@
 
 import csv
 
-with open("details.csv") as csvObj, open("emailList.txt", "a") as txtObj:
+with open("details.csv") as csvObj, open("emailList.txt", "w") as txtObj:
     try:
         content = csv.reader(csvObj)
         for row in content:
