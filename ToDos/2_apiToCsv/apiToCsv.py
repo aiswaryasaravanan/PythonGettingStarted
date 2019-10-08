@@ -10,17 +10,20 @@ data = res.json()
 
 list1=[]
 for key in data[0]:
-    list1.append(key)
+    list1.append(key.title())
 
 with open("response.csv","w") as csvObj:
     writeObj=csv.writer(csvObj)
     writeObj.writerow(list1)
     list1=[]
-    count=0
-    for row in data:
-        for key in data[count]:
-            list1.append(row[key])
+    for element in data:
+        for key in element:
+            if key=="completed" :
+                if element[key]==True:
+                    list1.append("Yes")
+                else:
+                    list1.append("No")
+            else:
+                list1.append(element[key])
         writeObj.writerow(list1)
         list1=[]
-        count=count+1
-
